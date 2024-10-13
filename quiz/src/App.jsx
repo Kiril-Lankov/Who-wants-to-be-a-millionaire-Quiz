@@ -4,6 +4,52 @@ import Quiz from "./Quiz";
 
 function App() {
   const [questionNumber, setQuiestionNumber] = useState(1);
+  const [timeOut, setTimeOut] = useState(false);
+
+  const data = [
+    {id:1,
+      question: "Ролекс е компания, която произвежда:",
+      answer: [
+      {
+        text: "Телефони",
+        correct: false,  
+      },
+      {
+        text: "Часовници",
+        correct: true,  
+      },
+      {
+        text: "Детски дрехи",
+        correct: false,  
+      },
+      {
+        text: "Автомобили",
+        correct: false,  
+      }
+      ]
+    },
+    {id:2,
+      question: "Ролекс е компания, която произвежда:",
+      answer: [
+      {
+        text: "Телефони",
+        correct: false,  
+      },
+      {
+        text: "Часовници",
+        correct: true,  
+      },
+      {
+        text: "Детски дрехи",
+        correct: false,  
+      },
+      {
+        text: "Автомобили",
+        correct: false,  
+      }
+      ]
+    }
+  ]
   const moneyPyramid = [
     {id:1, amount: "$ 100"},
     {id:2, amount: "$ 200"},
@@ -27,7 +73,11 @@ function App() {
       <div className="top">
         <div className="timer">30</div>
       </div>
-      <div className="bottom"><Quiz/></div>
+      <div className="bottom"><Quiz data={data} 
+      setTimeOut={setTimeOut}
+       setQuiestionNumber={setQuiestionNumber}
+       questionNumber={questionNumber}/>
+       </div>
      </div>
      <div className="pyramid">
       <ul className="moneyList">
