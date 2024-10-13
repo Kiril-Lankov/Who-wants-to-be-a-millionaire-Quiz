@@ -86,7 +86,7 @@ function App() {
         <>
       <div className="top">
         <div className="timer"> 
-          <Timer/>
+          <Timer setStop={setStop} questionNumber={questionNumber}/>
         </div>
       </div>
       <div className="bottom"><Quiz data={data} 
