@@ -6,7 +6,7 @@ function App() {
      <div className="main">mine</div>
      <div className="pyramid">
       <ul className="moneyList">
-        <li moneyListItem>
+        <li className="moneyListItem active" >
           <span className="moneyListItemNumber">4</span>
           <span className="moneyListItemAmount">$ 400</span>
         </li>
