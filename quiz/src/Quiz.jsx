@@ -5,6 +5,7 @@ import correct from "./sounds/correct.mp3";
 import wrong from "./sounds/wrong.mp3";
 
 export default function Quiz({ data, setStop, questionNumber, setQuestionNumber }) {
+    const [userName, setUserName] = useState(null);
     const [question, setQuestion] = useState(null);
     const [questionMarker, setQuestionMarker] = useState(null);
     const [className, setClassName] = useState("answer");
@@ -32,15 +33,22 @@ export default function Quiz({ data, setStop, questionNumber, setQuestionNumber 
         setClassName("answer active");
         delay(3000, ()=> setClassName(a.correct ? "answer correct" : "answer wrong")
       );
-      delay(6000, ()=> {
+      delay(5000, ()=> {
         if (a.correct) {
-            setQuestionNumber((prev)=> prev + 1);
-            setQuestionMarker(null);
+            correctAnswer();
+            delay(1000, () => {
+                setQuestionNumber((prev)=> prev + 1);
+                setQuestionMarker(null);
+            });
+           
         } else {
-            setStop(true);
+            wrongAnswer();
+            delay(1000, ()=> {
+                setStop(true);
+            });
+         
         }
-      }
-    );
+      });
     };
 
     return (
