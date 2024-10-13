@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import "./app.css";
 import Quiz from "./Quiz";
 
@@ -51,23 +51,31 @@ function App() {
       ]
     }
   ]
-  const moneyPyramid = [
-    {id:1, amount: "BGN 100"},
-    {id:2, amount: "BGN 200"},
-    {id:3, amount: "BGN 300"},
-    {id:4, amount: "BGN 400"},
-    {id:5, amount: "BGN 500"},
-    {id:6, amount: "BGN 1000"},
-    {id:7, amount: "BGN 2000"},
-    {id:8, amount: "BGN 3000"},
-    {id:9, amount: "BGN 5000"},
-    {id:10, amount: "BGN 10000"},
-    {id:11, amount: "BGN 15000"},
-    {id:12, amount: "BGN 20000"},
-    {id:13, amount: "BGN 25000"},
-    {id:14, amount: "BGN 50000"},
-    {id:15, amount: "BGN 100000"},
-  ].reverse();
+  const moneyPyramid = useMemo (()=> 
+    [
+      {id:1, amount: "BGN 100"},
+      {id:2, amount: "BGN 200"},
+      {id:3, amount: "BGN 300"},
+      {id:4, amount: "BGN 400"},
+      {id:5, amount: "BGN 500"},
+      {id:6, amount: "BGN 1000"},
+      {id:7, amount: "BGN 2000"},
+      {id:8, amount: "BGN 3000"},
+      {id:9, amount: "BGN 5000"},
+      {id:10, amount: "BGN 10000"},
+      {id:11, amount: "BGN 15000"},
+      {id:12, amount: "BGN 20000"},
+      {id:13, amount: "BGN 25000"},
+      {id:14, amount: "BGN 50000"},
+      {id:15, amount: "BGN 100000"},
+    ].reverse(),
+  []);
+
+  // Shows the earned money
+  useEffect(()=>{
+    questionNumber > 1 && 
+    setEarned(moneyPyramid.find((m)=> m.id === questionNumber - 1).amount); 
+  },[moneyPyramid, questionNumber]);
   return (
     <div className="app">
      <div className="main">
