@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./app.css";
+import Quiz from "./Quiz";
 
 function App() {
   const [questionNumber, setQuiestionNumber] = useState(1);
@@ -26,7 +27,7 @@ function App() {
       <div className="top">
         <div className="timer">30</div>
       </div>
-      <div className="bottom">QnA</div>
+      <div className="bottom"><Quiz/></div>
      </div>
      <div className="pyramid">
       <ul className="moneyList">
