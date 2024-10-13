@@ -5,6 +5,7 @@ import Quiz from "./Quiz";
 function App() {
   const [questionNumber, setQuestionNumber] = useState(1);
   const [stop, setStop] = useState(false);
+  const [earned, setEarned] = useState("0 BGN");
 
   const data = [
     {id:1,
@@ -51,25 +52,29 @@ function App() {
     }
   ]
   const moneyPyramid = [
-    {id:1, amount: "$ 100"},
-    {id:2, amount: "$ 200"},
-    {id:3, amount: "$ 300"},
-    {id:4, amount: "$ 400"},
-    {id:5, amount: "$ 500"},
-    {id:6, amount: "$ 1000"},
-    {id:7, amount: "$ 2000"},
-    {id:8, amount: "$ 3000"},
-    {id:9, amount: "$ 5000"},
-    {id:10, amount: "$ 10000"},
-    {id:11, amount: "$ 15000"},
-    {id:12, amount: "$ 20000"},
-    {id:13, amount: "$ 25000"},
-    {id:14, amount: "$ 50000"},
-    {id:15, amount: "$ 100000"},
+    {id:1, amount: "BGN 100"},
+    {id:2, amount: "BGN 200"},
+    {id:3, amount: "BGN 300"},
+    {id:4, amount: "BGN 400"},
+    {id:5, amount: "BGN 500"},
+    {id:6, amount: "BGN 1000"},
+    {id:7, amount: "BGN 2000"},
+    {id:8, amount: "BGN 3000"},
+    {id:9, amount: "BGN 5000"},
+    {id:10, amount: "BGN 10000"},
+    {id:11, amount: "BGN 15000"},
+    {id:12, amount: "BGN 20000"},
+    {id:13, amount: "BGN 25000"},
+    {id:14, amount: "BGN 50000"},
+    {id:15, amount: "BGN 100000"},
   ].reverse();
   return (
     <div className="app">
      <div className="main">
+      {stop ? (
+         <h1 className="endText">Вие спечелихте: {earned}</h1>
+      ): (
+        <>
       <div className="top">
         <div className="timer">30</div>
       </div>
@@ -78,6 +83,8 @@ function App() {
        setQuestionNumber={setQuestionNumber}
        questionNumber={questionNumber}/>
        </div>
+       </>
+      )}
      </div>
      <div className="pyramid">
       <ul className="moneyList">
