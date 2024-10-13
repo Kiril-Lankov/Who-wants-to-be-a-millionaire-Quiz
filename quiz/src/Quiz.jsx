@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export default function Quiz({ data, setTimeOut, questionNumber, setQuestionNumber }) {
+export default function Quiz({ data, setStop, questionNumber, setQuestionNumber }) {
     const [question, setQuestion] = useState(null);
     const [questionMarker, setQuestionMarker] = useState(null);
     const [className, setClassName] = useState("answer");
@@ -9,15 +9,28 @@ export default function Quiz({ data, setTimeOut, questionNumber, setQuestionNumb
     useEffect(() => {
         setQuestion(data[questionNumber - 1]);
     }, [data, questionNumber]);
-    // Function to choose an answer of the question
+
+    const delay = (duration, callback) => {
+        setTimeout(()=> {
+            callback();
+        }, duration);
+    };
+    // Function to choose an answer of the question and check if it is correct or not 
     const handleClick = (a) => {
         setQuestionMarker(a);
         setClassName("answer active");
-        // Check if the answer is correct
-        setTimeout(() => {
-            setClassName(a.correct ? "answer correct" : "answer wrong")
-        }, 3000);
-    }
+        delay(3000, ()=> setClassName(a.correct ? "answer correct" : "answer wrong")
+      );
+      delay(6000, ()=> {
+        if (a.correct) {
+            setQuestionNumber((prev)=> prev + 1);
+            setQuestionMarker(null);
+        } else {
+            setStop(true);
+        }
+      }
+    );
+    };
 
     return (
         <div className="quiz">

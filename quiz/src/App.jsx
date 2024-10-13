@@ -4,7 +4,7 @@ import Quiz from "./Quiz";
 
 function App() {
   const [questionNumber, setQuestionNumber] = useState(1);
-  const [timeOut, setTimeOut] = useState(false);
+  const [stop, setStop] = useState(false);
 
   const data = [
     {id:1,
@@ -74,7 +74,7 @@ function App() {
         <div className="timer">30</div>
       </div>
       <div className="bottom"><Quiz data={data} 
-      setTimeOut={setTimeOut}
+      setStop={setStop}
        setQuestionNumber={setQuestionNumber}
        questionNumber={questionNumber}/>
        </div>
