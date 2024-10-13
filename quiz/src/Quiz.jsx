@@ -5,7 +5,6 @@ import correct from "./sounds/correct.mp3";
 import wrong from "./sounds/wrong.mp3";
 
 export default function Quiz({ data, setStop, questionNumber, setQuestionNumber }) {
-    const [userName, setUserName] = useState(null);
     const [question, setQuestion] = useState(null);
     const [questionMarker, setQuestionMarker] = useState(null);
     const [className, setClassName] = useState("answer");
