@@ -7,7 +7,7 @@ export default function Quiz({data, setTimeOut, questionNumber, setQuestionNumbe
     //fetch questions
     useEffect(()=> {
         setQuestion(data[questionNumber-1])
-    },[])
+    },[data, questionNumber])
     return (
         <div className="quiz">
             <div className="question">Who is the richest people in the world?</div>
