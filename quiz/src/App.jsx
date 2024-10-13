@@ -3,13 +3,13 @@ import "./app.css";
 import Quiz from "./Quiz";
 
 function App() {
-  const [questionNumber, setQuiestionNumber] = useState(1);
+  const [questionNumber, setQuestionNumber] = useState(1);
   const [timeOut, setTimeOut] = useState(false);
 
   const data = [
     {id:1,
       question: "Ролекс е компания, която произвежда:",
-      answer: [
+      answers: [
       {
         text: "Телефони",
         correct: false,  
@@ -30,7 +30,7 @@ function App() {
     },
     {id:2,
       question: "Ролекс е компания, която произвежда:",
-      answer: [
+      answers: [
       {
         text: "Телефони",
         correct: false,  
@@ -75,7 +75,7 @@ function App() {
       </div>
       <div className="bottom"><Quiz data={data} 
       setTimeOut={setTimeOut}
-       setQuiestionNumber={setQuiestionNumber}
+       setQuestionNumber={setQuestionNumber}
        questionNumber={questionNumber}/>
        </div>
      </div>
