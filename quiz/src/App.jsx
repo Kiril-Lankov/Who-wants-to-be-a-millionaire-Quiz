@@ -6,10 +6,11 @@ function App() {
      <div className="main">mine</div>
      <div className="pyramid">
       <ul className="moneyList">
-        <li moneyListItem>$ 400</li>
-        <li moneyListItem>$ 300</li>
-        <li moneyListItem>$ 200</li>
-        <li moneyListItem>$ 100</li>
+        <li moneyListItem>
+          <span className="moneyListItemNumber">4</span>
+          <span className="moneyListItemAmount">$ 400</span>
+        </li>
+        
       </ul>
      </div>
     </div>
