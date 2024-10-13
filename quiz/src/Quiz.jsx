@@ -1,6 +1,9 @@
+import { useState } from "react"
 
 
 export default function Quiz({data, setTimeOut, questionNumber, setQuestionNumber}) {
+    const [question, setQuestion] =useState(null);
+    
     return (
         <div className="quiz">
             <div className="question">Who is the richest people in the world?</div>
