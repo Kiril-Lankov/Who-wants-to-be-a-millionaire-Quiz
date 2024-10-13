@@ -30,7 +30,7 @@ padding: 5px;
 border-radius: 5px;
 }
 
-.moneyListItem :active{
+.moneyListItem.active{
     background-color: teal;
 }
 
