@@ -207,12 +207,12 @@ border-radius: 5px;
 
 .hints {
     display: flex;
-    justify-content: flex-end;  /* Center buttons horizontally */
+    justify-content: flex-end;  
     position: absolute;
-    top: 10px;  /* Adjust this to place it on top of the pyramid */
-    width: 100%;  /* Ensure it spans the width of the pyramid */
+    top: 10px;  
+    width: 100%; 
     z-index: 10;
-    gap: 20px;  /* Space between buttons */
+    gap: 20px;  
   }
   
   
