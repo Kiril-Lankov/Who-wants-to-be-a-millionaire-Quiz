@@ -3,12 +3,18 @@ import "./app.css";
 import Quiz from "./Quiz";
 import Timer from "./Timer";
 import Start from "./Start";
+import Hints from "./Hints";
 
 function App() {
   const [userName, setUserName] = useState(null);
   const [questionNumber, setQuestionNumber] = useState(1);
   const [stop, setStop] = useState(false);
   const [earned, setEarned] = useState("0 BGN");
+
+  const [usedFIftyFifty, setUsedFiftyFifty] = useState(false);
+  const [usedAudienceHelp, setUsedAudienceHelp] = useState(false);
+  const [filteredAnswers, setFilteredAnswers] = useState([]);
+
 
   const data = [
     {id:1,
@@ -92,10 +98,13 @@ function App() {
             <Timer setStop={setStop} questionNumber={questionNumber}/>
           </div>
         </div>
-        <div className="bottom"><Quiz data={data} 
+        <div className="bottom">
+          <Quiz 
+          data={data} 
         setStop={setStop}
          setQuestionNumber={setQuestionNumber}
-         questionNumber={questionNumber}/>
+         questionNumber={questionNumber}
+         filteredAnswers={filteredAnswers}/>
          </div>
          </>
         )}
@@ -103,7 +112,8 @@ function App() {
        <div className="pyramid">
         <ul className="moneyList">
           {moneyPyramid.map((m) => (
-          <li className={questionNumber === m.id ? "moneyListItem active" : "moneyListItem"} >
+          <li key={m.id} 
+          className={questionNumber === m.id ? "moneyListItem active" : "moneyListItem"} >
             <span className="moneyListItemNumber">{m.id}</span>
             <span className="moneyListItemAmount">{m.amount}</span>
           </li>
@@ -111,6 +121,14 @@ function App() {
           
         </ul>
        </div>
+       <Hints
+       question={data[questionNumber -1 ]}
+       setFilteredAnswers={setFilteredAnswers}
+       usedFiftyFifty={usedFIftyFifty}
+       setUsedFiftyFifty={setUsedFiftyFifty}
+       usedAudienceHelp={usedAudienceHelp}
+       setUsedAudienceHelp={setUsedAudienceHelp}
+       />
        </>
       ) : ( <Start setUserName={setUserName}/>
       )}
