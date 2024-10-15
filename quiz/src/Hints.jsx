@@ -30,7 +30,8 @@ export default function Hints({question, setFilteredAnswers, usedFiftyFifty, set
     return (
    <div className="hints">
    <button onClick={handleFifyFifty} disabled={usedFiftyFifty}>50:50</button>
-   <button onClick={handleAudienceHelp} disabled={usedAudienceHelp}>Помощ от публиката</button>
+   <button onClick={handleAudienceHelp} disabled={usedAudienceHelp}>
+   </button>
    </div>     
     );
 }
