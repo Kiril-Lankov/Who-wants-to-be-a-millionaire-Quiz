@@ -204,3 +204,53 @@ border-radius: 5px;
     font-size: 18px;
     font-weight: 500;
 }
+
+.hints {
+    display: flex;
+    justify-content: center;  
+    align-items: center;  
+    position: absolute;  
+    top: 50%; 
+    left: 50%;  
+    transform: translate(-50%, -50%); 
+    z-index: 10; 
+    gap: 20px;  
+  }
+  
+ 
+  .hints button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;  
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  
+  }
+  
+  
+  .hints button:hover {
+    background-color: #45a049;  
+    transform: scale(1.1);  
+  }
+  
+  
+  .hints button:disabled {
+    background-color: #ccc;  
+    cursor: not-allowed;  
+    opacity: 0.6;  
+  }
+  
+  
+  .hints button:active {
+    background-color: #3e8e41;  
+    transform: scale(0.95);  
+  }
+  
+
