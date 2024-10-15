@@ -207,50 +207,114 @@ border-radius: 5px;
 
 .hints {
     display: flex;
-    justify-content: center;  
-    align-items: center;  
-    position: absolute;  
-    top: 50%; 
-    left: 50%;  
-    transform: translate(-50%, -50%); 
-    z-index: 10; 
-    gap: 20px;  
+    justify-content: center;  /* Center buttons horizontally */
+    position: absolute;
+    top: 10px;  /* Adjust this to place it on top of the pyramid */
+    width: 100%;  /* Ensure it spans the width of the pyramid */
+    z-index: 10;
+    gap: 20px;  /* Space between buttons */
   }
   
- 
-  .hints button {
-    background-color: #4CAF50;
+  /* Style for 50:50 button */
+  .hints .fiftyFiftyButton {
+    background-color: #4CAF50;  /* Green background (if needed) */
     border: none;
     color: white;
     width: 60px;
     height: 60px;
-    border-radius: 50%;  
+    border-radius: 50%;
     font-size: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Style for Audience Help button with background image */
+  .hints .audienceButton {
+    background-image: url('./assets/audience.png');  /* Use your image here */
+    background-size: cover;  /* Make the image cover the button */
+    background-position: center;
+    border: none;
+    color: transparent;  /* Hide the default text */
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;  /* Make it round */
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Hover effect */
+  .hints .audienceButton:hover,
+  .hints .fiftyFiftyButton:hover {
+    transform: scale(1.1);  /* Slightly enlarge the button on hover */
+  }
+  
+  /* Disabled button style */
+  .hints .audienceButton:disabled,
+  .hints .fiftyFiftyButton:disabled {
+    opacity: 0.6;  /* Make the button slightly transparent when disabled */
+    cursor: not-allowed;  /* Show not-allowed cursor for disabled buttons */
+  }
+  
+  /* Active button effect */
+  .hints .audienceButton:active,
+  .hints .fiftyFiftyButton:active {
+    transform: scale(0.95);  /* Shrink slightly when clicked */
   }
   
   
-  .hints button:hover {
-    background-color: #45a049;  
+  /* Style for 50:50 button */
+  .hints .fiftyFiftyButton {
+    background-color: #4CAF50;  /* Green background (if needed) */
+    border: none;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  
+  .hints .audienceButton {
+    background-image: url('./assets/audience.png');  
+    background-size: cover;  
+    background-position: center;
+    border: none;
+    color: transparent;  
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;  
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  
+  .hints .audienceButton:hover,
+  .hints .fiftyFiftyButton:hover {
     transform: scale(1.1);  
   }
   
   
-  .hints button:disabled {
-    background-color: #ccc;  
-    cursor: not-allowed;  
+  .hints .audienceButton:disabled,
+  .hints .fiftyFiftyButton:disabled {
     opacity: 0.6;  
-  }
-  
-  
-  .hints button:active {
-    background-color: #3e8e41;  
-    transform: scale(0.95);  
+    cursor: not-allowed; 
   }
   
 
+  .hints .audienceButton:active,
+  .hints .fiftyFiftyButton:active {
+    transform: scale(0.95);  
+  }
+  
