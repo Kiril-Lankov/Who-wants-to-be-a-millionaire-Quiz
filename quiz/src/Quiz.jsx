@@ -50,20 +50,19 @@ export default function Quiz({ data, setStop, questionNumber, setQuestionNumber,
       });
     };
 
-    return (
-        <div className="quiz">
+    const answersToShow = filteredAnswers.length ? filteredAnswers : question?.answers;
 
-            <div className="question">{question?.question}</div>
-
-
-            <div className="answers">
-                {question?.answers?.map((a, index) => (
-                    <div key={index} className={questionMarker === a ? className : "answer"} onClick={() => handleClick(a)}>
-                        {a.text}
-                        {a.vote !== undefined && <span className="audienceVote">({a.vote}%)</span>}
-                    </div>
-                ))}
-            </div>
-        </div>
-    );
+  return (
+    <div className="quiz">
+      <div className="question">{question?.question}</div>
+      <div className="answers">
+        {answersToShow?.map((a, index) => (
+          <div key={index} className={questionMarker === a ? className : "answer"} onClick={() => handleClick(a)}>
+            {a.text}
+            {a.vote !== undefined && <span className="audienceVote"> ({a.vote}%)</span>}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 }
