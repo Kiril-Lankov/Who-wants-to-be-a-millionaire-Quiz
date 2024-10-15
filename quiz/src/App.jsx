@@ -39,26 +39,302 @@ function App() {
       ]
     },
     {id:2,
-      question: "Ролекс е компания, която произвежда:",
+      question: "Коя от знаменитостите не е родена в Канада:",
       answers: [
       {
-        text: "Телефони",
+        text: "Селин Дион",
         correct: false,  
       },
       {
-        text: "Часовници",
+        text: "Нина Добрев",
         correct: true,  
       },
       {
-        text: "Детски дрехи",
+        text: "Памела Андерсън",
         correct: false,  
       },
       {
-        text: "Автомобили",
+        text: "Рейчъл Макадамс",
         correct: false,  
       }
       ]
     }
+    ,
+    {id:3,
+      question: "Кой уред от изброените се използва за измерване:",
+      answers: [
+      {
+        text: "Такер",
+        correct: false,  
+      },
+      {
+        text: "Шублер",
+        correct: true,  
+      },
+      {
+        text: "Тример",
+        correct: false,  
+      },
+      {
+        text: "Зегер",
+        correct: false,  
+      }
+      ]
+    },
+    {id:4,
+      question: "През коя от държавите не минава Гринуичкият меридиан? :",
+      answers: [
+      {
+        text: "Алжир",
+        correct: false,  
+      },
+      {
+        text: "Тунис",
+        correct: true,  
+      },
+      {
+        text: "Франция",
+        correct: false,  
+      },
+      {
+        text: "Испания",
+        correct: false,  
+      }
+      ]
+    },
+    {id:5,
+      question: "Коя държава от изброените не е анклав?:",
+      answers: [
+      {
+        text: "Ватикана",
+        correct: false,  
+      },
+      {
+        text: "Лихтенщайн",
+        correct: true,  
+      },
+      {
+        text: "Сан Марино",
+        correct: false,  
+      },
+      {
+        text: "Лесото",
+        correct: false,  
+      }
+      ]
+    },
+    {id:6,
+      question: "Кой от  изброените не е от главните острови на японския архипелаг? :",
+      answers: [
+      {
+        text: "Хокайдо",
+        correct: false,  
+      },
+      {
+        text: "Осака",
+        correct: true,  
+      },
+      {
+        text: "Кюшу",
+        correct: false,  
+      },
+      {
+        text: "Шикоку",
+        correct: false,  
+      }
+      ]
+    },
+    {id:7,
+      question: "Кой български премиер от изброените е бил председател на Българския червен кръст? :",
+      answers: [
+      {
+        text: "Митрополит Климент",
+        correct: false,  
+      },
+      {
+        text: "Иван Гешов",
+        correct: false,  
+      },
+      {
+        text: "Стоян Даневне",
+        correct: false,  
+      },
+      {
+        text: "Стефан Стамболов",
+        correct: true,  
+      }
+      ]
+    },
+    {id:8,
+      question: "По какъв необичаен за европейците критерий южнокорейците често избират половинките  си?:",
+      answers: [
+      {
+        text: "Харесване",
+        correct: false,  
+      },
+      {
+        text: "Врачка",
+        correct: false,  
+      },
+      {
+        text: "Кръвна група",
+        correct: true,  
+      },
+      {
+        text: "Случаен",
+        correct: false,  
+      }
+      ]
+    },
+    {id:9,
+      question: "Каква е причината за изчезването на студентите в прохода Дятлов:",
+      answers: [
+      {
+        text: "Извънземни",
+        correct: false,  
+      },
+      {
+        text: "Убити от животно",
+        correct: false,  
+      },
+      {
+        text: "Неизвестна",
+        correct: false,  
+      },
+      {
+        text: "Лавина",
+        correct: false,  
+      }
+      ]
+    },
+    {id:10,
+      question: "Кой език използва американската армия, за да криптира съобщенията си по време на Втората световна война? :",
+      answers: [
+      {
+        text: "Английски",
+        correct: false,  
+      },
+      {
+        text: "Немски",
+        correct: false,  
+      },
+      {
+        text: "Японски",
+        correct: false,  
+      },
+      {
+        text: "На индианците Навахо",
+        correct: true,  
+      }
+      ]
+    },
+    {id:11,
+      question: "Коя европейска столица от изброените не е била столица на летни или зимни олимпийски игри?:",
+      answers: [
+      {
+        text: "Будапеща",
+        correct: true,  
+      },
+      {
+        text: "Сараево",
+        correct: false,  
+      },
+      {
+        text: "Осло",
+        correct: false,  
+      },
+      {
+        text: "Берлин",
+        correct: false,  
+      }
+      ]
+    },
+    {id:12,
+      question: "Коя държава от изброените не е африканска? :",
+      answers: [
+      {
+        text: "Малави",
+        correct: false,  
+      },
+      {
+        text: "Бенин",
+        correct: true,  
+      },
+      {
+        text: "Сиера Леоне",
+        correct: false,  
+      },
+      {
+        text: "Белиз",
+        correct: false,  
+      }
+      ]
+    },
+    {id:13,
+      question: "В коя държава булката се затваря в специална стая, за да плаче две седмици до сватбата?:",
+      answers: [
+      {
+        text: "Ангола",
+        correct: false,  
+      },
+      {
+        text: "Сомалия",
+        correct: false,  
+      },
+      {
+        text: "Китай",
+        correct: true,  
+      },
+      {
+        text: "Филипини",
+        correct: false,  
+      }
+      ]
+    },
+    {id:14,
+      question: "Коя холивудска актриса убива Чарлз Менсън през 1969 г.?:",
+      answers: [
+      {
+        text: "Шарън Тейт",
+        correct: true,  
+      },
+      {
+        text: "Мерлин Монро",
+        correct: false,  
+      },
+      {
+        text: "Одри Хепбърн",
+        correct: false,  
+      },
+      {
+        text: "Полет Годар",
+        correct: false,  
+      }
+      ]
+    },
+    {id:15,
+      question: "Кой от тези американски президенти се е появявал в сериала Laugh-in:",
+      answers: [
+      {
+        text: "Линдън Джонсън",
+        correct: false,  
+      },
+      {
+        text: "Джими Картър",
+        correct: false,  
+      },
+      {
+        text: "Джерард Форд",
+        correct: false,  
+      },
+      {
+        text: "Ричард Никсън",
+        correct: true,  
+      }
+      ]
+    }
+    
+    
   ]
   const moneyPyramid = useMemo (()=> 
     [
