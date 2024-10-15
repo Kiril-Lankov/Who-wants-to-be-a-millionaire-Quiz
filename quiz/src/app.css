@@ -207,7 +207,7 @@ border-radius: 5px;
 
 .hints {
     display: flex;
-    justify-content: center;  /* Center buttons horizontally */
+    justify-content: flex-end;  /* Center buttons horizontally */
     position: absolute;
     top: 10px;  /* Adjust this to place it on top of the pyramid */
     width: 100%;  /* Ensure it spans the width of the pyramid */
@@ -215,9 +215,9 @@ border-radius: 5px;
     gap: 20px;  /* Space between buttons */
   }
   
-  /* Style for 50:50 button */
+  
   .hints .fiftyFiftyButton {
-    background-color: #4CAF50;  /* Green background (if needed) */
+    background-color: #4CAF50;  
     border: none;
     color: white;
     width: 60px;
@@ -230,46 +230,48 @@ border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-right: 50px;
   }
   
-  /* Style for Audience Help button with background image */
+ 
   .hints .audienceButton {
-    background-image: url('./assets/audience.png');  /* Use your image here */
-    background-size: cover;  /* Make the image cover the button */
+    background-image: url('./assets/audience.png');  
+    background-size: cover;  
     background-position: center;
     border: none;
-    color: transparent;  /* Hide the default text */
+    color: transparent;  
     width: 60px;
     height: 60px;
-    border-radius: 50%;  /* Make it round */
+    border-radius: 50%;  
     cursor: pointer;
     transition: transform 0.2s ease;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-right: 70px;
   }
   
-  /* Hover effect */
+  
   .hints .audienceButton:hover,
   .hints .fiftyFiftyButton:hover {
-    transform: scale(1.1);  /* Slightly enlarge the button on hover */
+    transform: scale(1.1);  
   }
   
-  /* Disabled button style */
+  
   .hints .audienceButton:disabled,
   .hints .fiftyFiftyButton:disabled {
-    opacity: 0.6;  /* Make the button slightly transparent when disabled */
-    cursor: not-allowed;  /* Show not-allowed cursor for disabled buttons */
+    opacity: 0.6;  
+    cursor: not-allowed; 
   }
   
-  /* Active button effect */
+  
   .hints .audienceButton:active,
   .hints .fiftyFiftyButton:active {
-    transform: scale(0.95);  /* Shrink slightly when clicked */
+    transform: scale(0.95); 
   }
   
   
-  /* Style for 50:50 button */
+  
   .hints .fiftyFiftyButton {
-    background-color: #4CAF50;  /* Green background (if needed) */
+    background-color: #4CAF50;  
     border: none;
     color: white;
     width: 60px;
