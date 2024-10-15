@@ -3,7 +3,7 @@ import { useState } from "react";
 export default function Hints({question, setFilteredAnswers, usedFiftyFifty, setUsedFiftyFifty, usedAudienceHelp, setUsedAudienceHelp}) {
    //50:50 hint
    const handleFifyFifty = () => {
-    if (usedFIftyFifty) return; // can be used only once
+    if (usedFiftyFifty) return; // can be used only once
 
     const incorrectAnswers = question.answers.filter(a => !a.correct);
     const twoIncorrect =  incorrectAnswers.slice(0, 2); //pick two incorrect answers
