@@ -60,6 +60,7 @@ export default function Quiz({ data, setStop, questionNumber, setQuestionNumber,
                 {question?.answers?.map((a, index) => (
                     <div key={index} className={questionMarker === a ? className : "answer"} onClick={() => handleClick(a)}>
                         {a.text}
+                        {a.vote !== undefined && <span className="audienceVote">({a.vote}%)</span>}
                     </div>
                 ))}
             </div>
