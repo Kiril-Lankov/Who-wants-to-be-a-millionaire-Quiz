@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 export default function Hints({question, setFilteredAnswers, usedFiftyFifty, setUsedFiftyFifty, usedAudienceHelp, setUsedAudienceHelp}) {
    //50:50 hint
    const handleFifyFifty = () => {
