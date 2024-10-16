@@ -356,11 +356,21 @@ function App() {
     ].reverse(),
   []);
 
+  const handleNextQuestion = () => {
+    //setUsedFiftyFifty(true);   
+    //setUsedAudienceHelp(true); 
+    setFilteredAnswers([]);     // Clean filtered question 
+  };
+
   // Shows the earned money
   useEffect(()=>{
     questionNumber > 1 && 
     setEarned(moneyPyramid.find((m)=> m.id === questionNumber - 1).amount); 
   },[moneyPyramid, questionNumber]);
+
+  
+
+  
   return (
     <div className="app">
       {userName ? (
@@ -382,6 +392,7 @@ function App() {
          questionNumber={questionNumber}
          filteredAnswers={filteredAnswers}
          setFilteredAnswers={setFilteredAnswers}
+         handleNextQuestion={handleNextQuestion}
          />
          </div>
          </>
