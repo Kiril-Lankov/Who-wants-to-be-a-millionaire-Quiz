@@ -4,7 +4,7 @@ import play from "./sounds/play.mp3";
 import correct from "./sounds/correct.mp3";
 import wrong from "./sounds/wrong.mp3";
 
-export default function Quiz({ data, setStop, questionNumber, setQuestionNumber, filteredAnswers }) {
+export default function Quiz({ data, setStop, questionNumber, setQuestionNumber, filteredAnswers, setFilteredAnswers }) {
     const [question, setQuestion] = useState(null);
     const [questionMarker, setQuestionMarker] = useState(null);
     const [className, setClassName] = useState("answer");
@@ -16,9 +16,10 @@ export default function Quiz({ data, setStop, questionNumber, setQuestionNumber,
         letsPlay();
     }, [letsPlay]);
 
-    // Fetch question based on question number
+    // Fetch question based on question number and reset filtered answers when question changes
     useEffect(() => {
         setQuestion(data[questionNumber - 1]);
+        setFilteredAnswers([])
     }, [data, questionNumber]);
 
     const delay = (duration, callback) => {
