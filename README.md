@@ -1,4 +1,5 @@
-"Стани богат - куиз"
+"Стани богат" - куиз с добавени жокери 50:50 и "помощ от публиката"
+
 Used technologies: JavaScript, React , CSS
 
 Screenshots:
