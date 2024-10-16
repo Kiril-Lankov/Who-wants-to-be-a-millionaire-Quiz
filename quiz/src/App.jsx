@@ -380,7 +380,9 @@ function App() {
         setStop={setStop}
          setQuestionNumber={setQuestionNumber}
          questionNumber={questionNumber}
-         filteredAnswers={filteredAnswers}/>
+         filteredAnswers={filteredAnswers}
+         setFilteredAnswers={setFilteredAnswers}
+         />
          </div>
          </>
         )}
