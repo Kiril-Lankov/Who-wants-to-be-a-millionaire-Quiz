@@ -19,8 +19,8 @@ export default function Quiz({ data, setStop, questionNumber, setQuestionNumber,
     // Fetch question based on question number and reset filtered answers when question changes
     useEffect(() => {
         setQuestion(data[questionNumber - 1]);
-        setFilteredAnswers([])
-    }, [data, questionNumber]);
+       
+    }, [data, questionNumber, setFilteredAnswers]);
 
     const delay = (duration, callback) => {
         setTimeout(()=> {
@@ -31,8 +31,11 @@ export default function Quiz({ data, setStop, questionNumber, setQuestionNumber,
     const handleClick = (a) => {
         setQuestionMarker(a);
         setClassName("answer active");
+        // Delay the answer animation (blinking)
         delay(3000, ()=> setClassName(a.correct ? "answer correct" : "answer wrong")
       );
+
+      //After animation , either move to the next question or stop the game
       delay(5000, ()=> {
         if (a.correct) {
             correctAnswer();
