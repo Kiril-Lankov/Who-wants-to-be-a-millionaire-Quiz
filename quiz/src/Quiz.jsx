@@ -4,7 +4,7 @@ import play from "./sounds/play.mp3";
 import correct from "./sounds/correct.mp3";
 import wrong from "./sounds/wrong.mp3";
 
-export default function Quiz({ data, setStop, questionNumber, setQuestionNumber, filteredAnswers, setFilteredAnswers }) {
+export default function Quiz({ data, setStop, questionNumber, setQuestionNumber, filteredAnswers, setFilteredAnswers,handleNextQuestion }) {
     const [question, setQuestion] = useState(null);
     const [questionMarker, setQuestionMarker] = useState(null);
     const [className, setClassName] = useState("answer");
@@ -19,7 +19,7 @@ export default function Quiz({ data, setStop, questionNumber, setQuestionNumber,
     // Fetch question based on question number and reset filtered answers when question changes
     useEffect(() => {
         setQuestion(data[questionNumber - 1]);
-       
+        
     }, [data, questionNumber, setFilteredAnswers]);
 
     const delay = (duration, callback) => {
@@ -35,13 +35,14 @@ export default function Quiz({ data, setStop, questionNumber, setQuestionNumber,
         delay(3000, ()=> setClassName(a.correct ? "answer correct" : "answer wrong")
       );
 
-      //After animation , either move to the next question or stop the game
+      //After animation , either move to the next question 
       delay(5000, ()=> {
         if (a.correct) {
             correctAnswer();
             delay(1000, () => {
                 setQuestionNumber((prev)=> prev + 1);
                 setQuestionMarker(null);
+                handleNextQuestion();
             });
            
         } else {
